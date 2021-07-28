@@ -16,12 +16,17 @@ use App\Http\Controllers\User;
 
 Route::get('/', function () {
     
-    return view('gypsy');
+    return view('welcome');
 });
-// Route::get('/about', function () {
-//     return view('about');
-// });
-Route::view('/about','about');
+Route::get('/about', function () {
+    return view('about');
+});
+//Route::view('/about','about');
 
 // Route::get("users", "User@index");
-Route::get("user/{user}",[User::class, "index"]);
+
+
+//Calling the view
+Route::view("gypsy", "gypsy");
+
+Route::get('user', [User::class, 'viewLoad']);

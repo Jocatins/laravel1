@@ -1,2 +1,3 @@
-<h1>Gypsy</h1>
-<a href="/about">About Us</a>
+<x-header data="gypsy component header"/>
+
+<h1>Gypsy Page </h1>

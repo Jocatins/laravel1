@@ -1,1 +1,1 @@
-<h2>Good day</h2>
+<h2>Welcome Blade HomePage</h2>
