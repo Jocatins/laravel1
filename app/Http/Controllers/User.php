@@ -7,10 +7,13 @@ use Illuminate\Http\Request;
 class User extends Controller
 {
    
-    public  function viewLoad(){
-
-        $data = ['jenny', 'joca', 'fresh','wealthy'];
-         return view('user', ['titans' => $data]);
+    public  function viewData(Request $request){
+        $request->validate([
+            'username'=>'required | max: 12',
+            'password'=>'required | min: 6'
+        ]);
+        return $request->input();
+        
      }
     
 }

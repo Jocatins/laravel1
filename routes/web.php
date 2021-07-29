@@ -18,15 +18,5 @@ Route::get('/', function () {
     
     return view('welcome');
 });
-Route::get('/about', function () {
-    return view('about');
-});
-//Route::view('/about','about');
-
-// Route::get("users", "User@index");
-
-
-//Calling the view
-Route::view("gypsy", "gypsy");
-
-Route::get('user', [User::class, 'viewLoad']);
+Route::post('user', [User::class, 'viewData']);
+Route::view('login', 'user');
