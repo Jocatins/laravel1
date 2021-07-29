@@ -14,11 +14,16 @@ use App\Http\Controllers\User;
 |
 */
 
-Route::get('/', function () {
-    
-    return view('welcome');
-});
+
 Route::post('user', [User::class, 'viewData']);
-Route::view('login', 'user');
+
 Route::view('no-access', 'noaccess');
 Route::view('about', 'about');
+//Group middleware
+Route::group(['middleware' => ['protectedPage']], function() {
+    Route::view('login', 'user');
+    Route::get('/', function () {
+    
+        return view('welcome');
+    });
+});
