@@ -20,3 +20,5 @@ Route::get('/', function () {
 });
 Route::post('user', [User::class, 'viewData']);
 Route::view('login', 'user');
+Route::view('no-access', 'noaccess');
+Route::view('about', 'about');
