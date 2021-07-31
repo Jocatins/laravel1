@@ -16,3 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/gypsy', function () {
+
+    $gypsies = [
+        ['type' => 'black', 'base' => 'sweet'],
+        ['type' => 'blue', 'base' => 'sweet'],
+        ['type' => 'yellow', 'base' => 'sweet'],
+        ['type' => 'red', 'base' => 'sweet']
+    ];
+    return view('gypsy', ['gypsies' => $gypsies]);
+});
