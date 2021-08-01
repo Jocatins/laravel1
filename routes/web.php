@@ -24,5 +24,10 @@ Route::get('/gypsy', function () {
         ['type' => 'yellow', 'base' => 'sweet'],
         ['type' => 'red', 'base' => 'sweet']
     ];
-    return view('gypsy', ['gypsies' => $gypsies]);
+    
+    return view('gypsy',
+     ['gypsies' => $gypsies,
+    'name' => request('name'),
+    'age' => request('age')
+    ]);
 });
