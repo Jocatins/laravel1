@@ -31,3 +31,7 @@ Route::get('/gypsy', function () {
     'age' => request('age')
     ]);
 });
+Route::get('/gypsy/{id}', function ($id) {
+    
+    return view('details', ['id' => $id]);
+});
