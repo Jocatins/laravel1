@@ -18,4 +18,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/gypsy', [GypsyController::class, 'index']);
+Route::get('/gypsy/create', [GypsyController::class, 'create']);
 Route::get('/gypsy/{id}', [GypsyController::class, 'show']);

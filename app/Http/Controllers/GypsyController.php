@@ -17,10 +17,14 @@ class GypsyController extends Controller
         // $gypsies = Gypsy::orderBy('name', 'desc')->get();
         $gypsies = Gypsy::where('name', 'Creeks')->get();
 
-        return view('gypsy', ['gypsies' => $gypsies]);
+        return view('gypsies.index', ['gypsies' => $gypsies]);
     }
     public function show($id)
     {
-        return view('details', ['id' => $id]);
+        return view('gypsies.show', ['id' => $id]);
+    }
+    public function create()
+    {
+        return view('gypsies.create');
     }
 }
