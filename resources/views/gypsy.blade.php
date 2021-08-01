@@ -1,18 +1,35 @@
-<div>
-    {{-- @for($i = 0; $i <6; $i ++)
-    <p>the value of i is {{  $i }}</p>
-    @endfor --}}
+@extends('layouts.layout')
 
-    {{-- @for($i = 0; $i < count($gypsies); $i ++)
-        <p>{{ $gypsies[$i]['base'] }}</p>
-    @endfor --}}
+@section('titans')
 
-    @foreach($gypsies as $gypsy)
-        <div>
-            {{ $loop->index }} {{ $gypsy['type'] }} -- {{ $gypsy['base'] }}
-            @if($loop->last)
-            <span>--Last in the loop</span>
-            @endif
+        <div class="flex-center position-ref full-height">
+            <div class="content">
+                <div class="title m-b-md">
+                    gypsy List
+                </div>
+                
+                <!-- @for($i = 0; $i < 5; $i++)
+                  <p>the value of i is {{ $i }}</p>
+                @endfor -->
+
+                <!-- @for($i = 0; $i < count($gypsies); $i++)
+                  <p>{{ $gypsies[$i]['type'] }}</p>
+                @endfor -->
+
+                @foreach($gypsies as $gypsy)
+                  <div>
+                    {{ $loop->index }} - {{ $gypsy['type'] }} - {{ $gypsy['base'] }}
+                    @if($loop->first)
+                      <span> - first in the loop</span>
+                    @endif
+                    @if($loop->last)
+                      <span> - last in the loop</span>
+                    @endif
+                  </div>
+                @endforeach
+
+            </div>
         </div>
-    @endforeach
-</div>
+
+        @endsection
+    
