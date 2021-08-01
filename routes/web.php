@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GypsyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,22 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/gypsy', function () {
-
-    $gypsies = [
-        ['type' => 'black', 'base' => 'sweet'],
-        ['type' => 'blue', 'base' => 'sweet'],
-        ['type' => 'yellow', 'base' => 'sweet'],
-        ['type' => 'red', 'base' => 'sweet']
-    ];
-    
-    return view('gypsy',
-     ['gypsies' => $gypsies,
-    'name' => request('name'),
-    'age' => request('age')
-    ]);
-});
-Route::get('/gypsy/{id}', function ($id) {
-    
-    return view('details', ['id' => $id]);
-});
+Route::get('/gypsy', [GypsyController::class, 'index']);
+Route::get('/gypsy/{id}', [GypsyController::class, 'show']);
