@@ -34,9 +34,14 @@ class GypsyController extends Controller
     }
     public function store()
     {
-        error_log(request('name'));
-        error_log(request('type'));
-        error_log(request('base'));
-        return redirect('/');
+        $gypsy = new Gypsy();
+        $gypsy->name = request('name');
+        $gypsy->type = request('type');
+        $gypsy->base = request('base');
+
+        $gypsy->toppings = request('toppings');
+
+        $gypsy->save();
+        return redirect('/')->with('msg', 'Thanks for your patronage');
     }
 }

@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Gypsy extends Model
 {
     use HasFactory;
+
+    //Cast to transform array into json
+    protected $casts = [
+        'toppings' => 'array'
+    ];
 }

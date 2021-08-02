@@ -23,6 +23,8 @@
                     gypsy House<br />
                     The North's Best gypsys
                 </div>
+                <p  class="msg">{{ session('msg')  }}</p>
+                <a href="/gypsy/create">Order a Pizza</a>
             </div>
         </div>
  @endsection
