@@ -21,3 +21,4 @@ Route::get('/gypsy', [GypsyController::class, 'index']);
 Route::get('/gypsy/create', [GypsyController::class, 'create']);
 Route::post('/gypsy', [GypsyController::class, 'store']);
 Route::get('/gypsy/{id}', [GypsyController::class, 'show']);
+Route::delete('/gypsy/{id}', [GypsyController::class, 'destroy']);

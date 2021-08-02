@@ -12,6 +12,11 @@
         <li>{{ $topping }}</li>
         @endforeach
     </ul>
+    <form action="/gypsy/{{ $gypsy->id }}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button>Complete Order</button>
+    </form>
   </div>
 
         @endsection

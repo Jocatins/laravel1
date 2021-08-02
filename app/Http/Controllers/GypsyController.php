@@ -13,10 +13,8 @@ class GypsyController extends Controller
     //
     public function index()
     {
-        //$gypsies =  Gypsy::all();
-        // $gypsies = Gypsy::orderBy('name', 'desc')->get();
-        //$gypsies = Gypsy::where('name', 'Creeks')->get();
-        $gypsies = Gypsy::latest()->get();
+        $gypsies =  Gypsy::all();
+
 
         return view('gypsies.index', ['gypsies' => $gypsies]);
     }
@@ -43,5 +41,12 @@ class GypsyController extends Controller
 
         $gypsy->save();
         return redirect('/')->with('msg', 'Thanks for your patronage');
+    }
+    public function destroy($id)
+    {
+        $gypsy = Gypsy::findOrFail($id);
+        $gypsy->delete();
+
+        return redirect('/gypsy');
     }
 }
