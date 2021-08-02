@@ -2,14 +2,11 @@
 
 @section('titans')
 
-        <div class="flex-center position-ref full-height">
-            <div class="content">
-                <div class="title m-b-md">
-                    gypsy List - {{ $id }}
-                </div>                 
-
-            </div>
-        </div>
+<div class="wrapper pizza-details">
+    <h1>Order for {{ $gypsy->name }}</h1>
+    <p class="type">Type - {{ $gypsy->type }}</p>
+    <p class="base">Base - {{ $gypsy->base }}</p>
+  </div>
 
         @endsection
     
