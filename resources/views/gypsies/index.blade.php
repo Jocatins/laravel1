@@ -2,20 +2,16 @@
 
 @section('titans')
 
-        <div class="flex-center position-ref full-height">
-            <div class="content">
-                <div class="title m-b-md">
-                    gypsy List
-                </div>                
+<div class="wrapper pizza-index">
+  <h1>Pizza Orders</h1>
+  @foreach($gypsies as $gypsy)
+    <div class="pizza-item">
+      <img src="/img/pizza.png" alt="pizza icon">
+      <h4><a href="/gypsy/{{ $gypsy->id }}">{{ $gypsy->name }}</a></h4>
+    </div>
+  @endforeach
 
-                @foreach($gypsies as $gypsy)
-                  <div>
-                    {{  $gypsy->name }} - {{  $gypsy->type }} - {{  $gypsy->base }}
-                  </div>
-                @endforeach
-
-            </div>
-        </div>
+</div>
 
         @endsection
     

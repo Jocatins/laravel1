@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\GypsyController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,7 @@ Route::get('/gypsy/create', [GypsyController::class, 'create']);
 Route::post('/gypsy', [GypsyController::class, 'store']);
 Route::get('/gypsy/{id}', [GypsyController::class, 'show']);
 Route::delete('/gypsy/{id}', [GypsyController::class, 'destroy']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
