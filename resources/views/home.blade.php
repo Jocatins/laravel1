@@ -15,6 +15,9 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    <div>
+                        <a href="/gypsy">View all Pizza Orders</a>
+                      </div>
                 </div>
             </div>
         </div>

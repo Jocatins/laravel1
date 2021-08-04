@@ -1,6 +1,6 @@
-@extends('layouts.layout')
+@extends('layouts.app')
 
-@section('titans')
+@section('content')
 
 <div class="wrapper pizza-details">
     <h1>Order for {{ $gypsy->name }}</h1>

@@ -8,12 +8,10 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-
-        <link href="/css/main.css" rel="stylesheet">      
+             <link href="/css/main.css" rel="stylesheet">
     </head>
     <body>
-        @yield('titans')
+        @yield('content')
     </body>
     <footer>
         <p>Copyright 2020 Gypsy House</p>

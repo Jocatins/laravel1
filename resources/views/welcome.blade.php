@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('titans')
+@section('content')
 
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))

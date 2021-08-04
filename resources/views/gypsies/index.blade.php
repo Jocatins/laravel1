@@ -1,6 +1,6 @@
-@extends('layouts.layout')
+@extends('layouts.app')
 
-@section('titans')
+@section('content')
 
 <div class="wrapper pizza-index">
   <h1>Pizza Orders</h1>
