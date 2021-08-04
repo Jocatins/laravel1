@@ -18,11 +18,11 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/gypsy', [GypsyController::class, 'index']);
+Route::get('/gypsy', [GypsyController::class, 'index'])->middleware('auth');
 Route::get('/gypsy/create', [GypsyController::class, 'create']);
 Route::post('/gypsy', [GypsyController::class, 'store']);
-Route::get('/gypsy/{id}', [GypsyController::class, 'show']);
-Route::delete('/gypsy/{id}', [GypsyController::class, 'destroy']);
+Route::get('/gypsy/{id}', [GypsyController::class, 'show'])->middleware('auth');
+Route::delete('/gypsy/{id}', [GypsyController::class, 'destroy'])->middleware('auth');
 
 Auth::routes();
 

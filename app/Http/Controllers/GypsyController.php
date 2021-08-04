@@ -10,7 +10,10 @@ use App\Models\Gypsy;
 //Controllers register actions or functions that fire when certain routes are visited
 class GypsyController extends Controller
 {
-    //
+    //to protect every single controlled by the controller
+    // public function __construct(){
+    //     $this->middleware('auth');
+    // }
     public function index()
     {
         $gypsies =  Gypsy::all();
