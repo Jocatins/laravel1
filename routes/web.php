@@ -24,6 +24,8 @@ Route::post('/gypsy', [GypsyController::class, 'store']);
 Route::get('/gypsy/{id}', [GypsyController::class, 'show'])->middleware('auth');
 Route::delete('/gypsy/{id}', [GypsyController::class, 'destroy'])->middleware('auth');
 
-Auth::routes();
+Auth::routes([
+    'register' => false
+]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
